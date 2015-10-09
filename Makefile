@@ -32,15 +32,15 @@ LDFLAGS=$(CMSISFL) -static -mcpu=cortex-m3 -mthumb -mthumb-interwork \
 
 LDFLAGS+=-L$(CMSIS)/lib -lDriversLPC17xxgnu
 
-EXECNAME	= bin/led
+EXECNAME	= bin/MiniProject1
 
-OBJ		= led.o 
+OBJ		= MiniProject1.o 
 
-all: 	led
+all: 	MiniProject1
 	@echo "Build finished"
 
 
-led: $(OBJ)
+MiniProject1: $(OBJ)
 	$(CC) -o $(EXECNAME) $(OBJ) $(LDFLAGS)
 	$(OBJCOPY) -I elf32-little -O binary $(EXECNAME) $(EXECNAME).bin
 	
